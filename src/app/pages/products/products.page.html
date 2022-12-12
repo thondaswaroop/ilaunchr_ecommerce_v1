@@ -1,0 +1,11 @@
+<app-header menuItem="child" [headerLabel]="categorytitle"></app-header>
+<ion-content [ngStyle]="{'--background': preferColorTheme}">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <app-product [category]="category" (onCartUpdate)="onCartUpdate($event)"
+          [categorytitle]="categorytitle"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

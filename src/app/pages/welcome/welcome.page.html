@@ -1,0 +1,63 @@
+<ion-content class="ion-no-padding ion-no-scroll">
+  <ion-item class=" ion-justify-content-end ios-margin-top-2x">
+  </ion-item>
+  <ion-slides pager="true" #slideWithNavAr class="onboard-slider"
+    (ionSlideDidChange)="slideDidChange('ar',slideWithNavAr)">
+    <ion-content *ngTemplateOutlet="slides"></ion-content>
+  </ion-slides>
+  <ion-row>
+    <ion-col size="12">
+      <!-- <ion-item class="ion-text-center w-180 mx-auto" *ngIf="!finalStep">
+        <app-custom-button buttonColor="primary" class="w-100P" buttonExpand="full" [buttonLabel]="'NEXT'|translate"
+          (click)="moveToNextSlide();"></app-custom-button>
+
+      </ion-item> -->
+      <ion-item class="ion-text-center  w-180 mx-auto" *ngIf="!finalStep">
+        <app-custom-button buttonColor="light" class="w-100P" buttonExpand="full" [buttonLabel]="'SKIP'|translate"
+          (click)="navigateToLogin();"></app-custom-button>
+
+      </ion-item>
+      <ion-item class="ion-text-center  w-180 mx-auto" *ngIf="finalStep">
+        <app-custom-button buttonColor="primary" class="w-100P" buttonExpand="full"
+          [buttonLabel]="'GET_STARTED'|translate" (click)="navigateToLogin();">
+        </app-custom-button>
+      </ion-item>
+
+    </ion-col>
+  </ion-row>
+  <ng-template #slides>
+    <ion-slide>
+      <ion-text class="ion-text-center ion-padding ion-d-block ion-padding-top-none ">
+        <h1 class="onbard-title ion-no-margin ion-no-padding ion-position-relative " translate>Tutorial_title_1</h1>
+        <h3 class="ion-margin-bottom-1x-5" translate>Tutorial_Text_1</h3>
+        <ion-item class="ion-sliders-inner">
+          <div class="graphic-animation mt-25 text-center">
+            <img src="assets/images/tutorial1.png">
+          </div>
+        </ion-item>
+      </ion-text>
+    </ion-slide>
+    <ion-slide>
+      <ion-text class="ion-text-center ion-padding ion-d-block ion-padding-top-none ">
+        <h1 class="onbard-title ion-no-margin ion-no-padding ion-position-relative " translate>Tutorial_title_2</h1>
+        <h3 class="ion-margin-bottom-1x-5" translate>Tutorial_Text_2</h3>
+        <ion-item class="ion-sliders-inner">
+          <div class="graphic-animation mt-25 text-center">
+            <img src="assets/images/tutorial2.png">
+          </div>
+        </ion-item>
+      </ion-text>
+    </ion-slide>
+    <ion-slide>
+      <ion-text class="ion-text-center ion-padding ion-d-block ion-padding-top-none ">
+        <h1 class="onbard-title ion-no-margin ion-no-padding ion-position-relative " translate>Tutorial_title_3</h1>
+        <h3 class="ion-margin-bottom-1x-5" translate>Tutorial_Text_3</h3>
+        <ion-item class="ion-sliders-inner">
+          <div class="graphic-animation mt-25 text-center">
+            <img src="assets/images/tutorial3.png">
+          </div>
+        </ion-item>
+      </ion-text>
+    </ion-slide>
+  </ng-template>
+</ion-content>

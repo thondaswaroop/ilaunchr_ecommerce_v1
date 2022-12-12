@@ -1,0 +1,15 @@
+{
+  "name": "ecom",
+  "integrations": {
+    "cordova": {}
+  },
+  "v2": true,
+  "typescript": true,
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://squarecart.com/ecommerce/api"
+    }
+  ]
+}

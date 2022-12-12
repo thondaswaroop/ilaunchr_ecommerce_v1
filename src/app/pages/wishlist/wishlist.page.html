@@ -1,0 +1,39 @@
+<app-header menuItem="child" headerLabel="My Wishlist"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="text-center" *ngIf="!wishlists.length">
+        <ion-label class="ion-padding-xxs margin_top_percentage_30">
+          No wishlists Found
+        </ion-label>
+      </ion-col>
+      <ion-col size="12" *ngIf="wishlists.length">
+        <ion-card *ngFor="let wishlist of wishlists;let i=index;">
+          <!-- <ion-card-header class="ion-card-highlighter">
+            <ion-row>
+              <ion-col size="11">
+                {{wishlist.title}}
+              </ion-col>
+              <ion-col size="1" (click)="wishlistModify(wishlist.productid,i)">
+                <ion-icon name="heart" class="ion-font-lg"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-card-header> -->
+          <ion-card-content class="productbox">
+            <div class="wishlistbox" (click)="wishlistModify(wishlist.productid,i)"><ion-icon name="heart" class="ion-font-lg" [ngStyle]="{'color': preferColorTheme}"></ion-icon></div>
+            <ion-row (click)="productView(wishlist.productid);">
+              <ion-col size="3">
+                <img [src]="wishlist.image" class="productboximage">
+              </ion-col>
+              <ion-col size="9">
+                <ion-label text-wrap>{{wishlist.title}}</ion-label>
+                <ion-label text-wrap>{{wishlist.overview | shorttext:100 }}</ion-label>
+                <ion-label text-wrap translate>Price: {{currency}} {{wishlist.price}}</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

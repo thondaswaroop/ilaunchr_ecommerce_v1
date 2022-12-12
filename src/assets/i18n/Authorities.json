@@ -1,0 +1,308 @@
+{
+  "Authorities": [
+    {
+      "Key": "0100",
+      "Value": "Dubai Department of Economic Development"
+    },
+    {
+      "Key": "0101",
+      "Value": "Agricultural Bank of China"
+    },
+    {
+      "Key": "0102",
+      "Value": "Communit Develpoment Authority"
+    },
+    {
+      "Key": "0103",
+      "Value": "Department of Tourism and Commerce Marketing"
+    },
+    {
+      "Key": "0104",
+      "Value": "Dubai Academic City"
+    },
+    {
+      "Key": "0105",
+      "Value": "Dubai Airport Free Zone"
+    },
+    {
+      "Key": "0106",
+      "Value": "Dubai Aviation City Corporation"
+    },
+    {
+      "Key": "0107",
+      "Value": "Dubai Biotechnology & Research Park (DuBiotech)"
+    },
+    {
+      "Key": "0108",
+      "Value": "Dubai Car and Automotive City Free Zone (DUCAMZ)"
+    },
+    {
+      "Key": "0109",
+      "Value": "Dubai Chamber of Commerce"
+    },
+    {
+      "Key": "0110",
+      "Value": "Dubai Creative Clusters Authority"
+    },
+    {
+      "Key": "0111",
+      "Value": "Dubai Design District"
+    },
+    {
+      "Key": "0112",
+      "Value": "Dubai Development Authority"
+    },
+    {
+      "Key": "0113",
+      "Value": "Dubai Gold and Diamonf Park"
+    },
+    {
+      "Key": "0114",
+      "Value": "Dubai Healthcare City"
+    },
+    {
+      "Key": "0115",
+      "Value": "Dubai Industrial City (DIC)"
+    },
+    {
+      "Key": "0116",
+      "Value": "Dubai Industrial Park"
+    },
+    {
+      "Key": "0117",
+      "Value": "Dubai International Academic City"
+    },
+    {
+      "Key": "0118",
+      "Value": "Dubai International Financial Centre"
+    },
+    {
+      "Key": "0119",
+      "Value": "Dubai Internet City (DIC)"
+    },
+    {
+      "Key": "0120",
+      "Value": "Dubai Knowledge Village"
+    },
+    {
+      "Key": "0121",
+      "Value": "Dubai Logistics City"
+    },
+    {
+      "Key": "0122",
+      "Value": "Dubai Maritime City Authority"
+    },
+    {
+      "Key": "0123",
+      "Value": "Dubai Media City"
+    },
+    {
+      "Key": "0124",
+      "Value": "Dubai Multi Commodities Centre of Jumeirah Lakes Towers Free Zone"
+    },
+    {
+      "Key": "0125",
+      "Value": "Dubai Outsource Zone"
+    },
+    {
+      "Key": "0126",
+      "Value": "Dubai Silicon Oasis"
+    },
+    {
+      "Key": "0127",
+      "Value": "Dubai South"
+    },
+    {
+      "Key": "0128",
+      "Value": "Dubai Studio City"
+    },
+    {
+      "Key": "0129",
+      "Value": "Dubai Techno Park"
+    },
+    {
+      "Key": "0130",
+      "Value": "Dubai Technology and Media Free Zone"
+    },
+    {
+      "Key": "0131",
+      "Value": "Dubai World Trade Centre Authority"
+    },
+    {
+      "Key": "0132",
+      "Value": "Economic Zones World"
+    },
+    {
+      "Key": "0133",
+      "Value": "Expo 2020 Dubai"
+    },
+    {
+      "Key": "0134",
+      "Value": "Internation Free Zone Authorith"
+    },
+    {
+      "Key": "0135",
+      "Value": "Internation Humanitarian City"
+    },
+    {
+      "Key": "0136",
+      "Value": "Internation Media Production Zone"
+    },
+    {
+      "Key": "0137",
+      "Value": "Jebel Ali Free Zone"
+    },
+    {
+      "Key": "0138",
+      "Value": "Meydan Free Zone"
+    },
+    {
+      "Key": "0139",
+      "Value": "Trakhees - Dubai"
+    },
+    {
+      "Key": "0200",
+      "Value": "Abu Dhabi Department of Economic Development"
+    },
+    {
+      "Key": "0201",
+      "Value": "Abu Dhabi Airport Business City"
+    },
+    {
+      "Key": "0202",
+      "Value": "Abu Dhabi Free Zone"
+    },
+    {
+      "Key": "0203",
+      "Value": "Abu Dhabi Global Market"
+    },
+    {
+      "Key": "0204",
+      "Value": "Abu Dhabi Ports Company"
+    },
+    {
+      "Key": "0205",
+      "Value": "Central Bank of UAE"
+    },
+    {
+      "Key": "0206",
+      "Value": "Higher Corporation for Specialized Economic zones/Zones Corp"
+    },
+    {
+      "Key": "0207",
+      "Value": "Khalifa Industrial Zone"
+    },
+    {
+      "Key": "0208",
+      "Value": "Masdar City"
+    },
+    {
+      "Key": "0209",
+      "Value": "Media Zone Authority"
+    },
+    {
+      "Key": "0210",
+      "Value": "TwoFour54"
+    },
+    {
+      "Key": "0211",
+      "Value": "Department of Economic Development - Al Ain"
+    },
+    {
+      "Key": "0300",
+      "Value": "Ajman Department of Economic Development"
+    },
+    {
+      "Key": "0301",
+      "Value": "Ajman Free Zone"
+    },
+    {
+      "Key": "0302",
+      "Value": "Ajman Media City Free Zone"
+    },
+    {
+      "Key": "0303",
+      "Value": "Department of Land & Real estate regulation of Ajman"
+    },
+    {
+      "Key": "0400",
+      "Value": "Creative City Fujairah"
+    },
+    {
+      "Key": "0401",
+      "Value": "Dibba Municipality"
+    },
+    {
+      "Key": "0402",
+      "Value": "Fujairah Municipality"
+    },
+    {
+      "Key": "0500",
+      "Value": "Ras Al Khaimah Department of Economic Development"
+    },
+    {
+      "Key": "0501",
+      "Value": "RAK Maritime City"
+    },
+    {
+      "Key": "0502",
+      "Value": "Ras Al Khaimah Economic Zone (RAK Free Trade Zone & RAK Investment Authority)"
+    },
+    {
+      "Key": "0503",
+      "Value": "Ras Al Khaimah Media Free Zone"
+    },
+    {
+      "Key": "0504",
+      "Value": "Ras Al Khaimah Tourism Development Authority"
+    },
+    {
+      "Key": "0600",
+      "Value": "Sharjah Economic Development Department"
+    },
+    {
+      "Key": "0601",
+      "Value": "Hamriya Free Zone"
+    },
+    {
+      "Key": "0602",
+      "Value": "Shams Free Zone"
+    },
+    {
+      "Key": "0603",
+      "Value": "Sharjah Airport Internation Free Zone"
+    },
+    {
+      "Key": "0604",
+      "Value": "Sharjah Healthcare City"
+    },
+    {
+      "Key": "0605",
+      "Value": "Sharjah Media City"
+    },
+    {
+      "Key": "0606",
+      "Value": "Sharjah Publishing City"
+    },
+    {
+      "Key": "0607",
+      "Value": "Sharjah Research Technology and Innovation Park"
+    },
+    {
+      "Key": "0700",
+      "Value": "Umm Al Quwain Department of Economic Development"
+    },
+    {
+      "Key": "0701",
+      "Value": "Umm Al Quwain Free Trade Zone"
+    },
+    {
+      "Key": "0702",
+      "Value": "Umm Al Quwain Municipality"
+    },
+    {
+      "Key": "0703",
+      "Value": "Trakhees - Umm Al Quwain"
+    }
+  ]
+}

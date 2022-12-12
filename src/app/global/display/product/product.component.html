@@ -1,0 +1,70 @@
+<ion-row>
+  <ion-col size="12" *ngIf="productsType=='featured' && (category!=0 || category!='0') && productsdatashow && products.length" class="ion-text-center text-white ion-font-xs">
+    Featured Items for this category
+  </ion-col>
+  <ion-col size="12" *ngIf="!productsdatashow">
+    <ion-card *ngFor="let loop of dummyloop">
+      <ion-skeleton-text class="banner_slides" animated style="width: 100%"></ion-skeleton-text>
+    </ion-card>
+  </ion-col>
+  <ion-col size="12" class="text-center" *ngIf="productsdatashow && !products.length">
+    <ion-label class="ion-padding-xxs margin_top_percentage_30">
+      No Feature Products Found
+    </ion-label>
+  </ion-col>
+  <ion-col size="12" *ngIf="productsdatashow">
+    <ion-card *ngFor="let product of products;let i=index;">
+      <!-- <ion-card-header class="ion-card-highlighter">
+        <ion-row>
+          <ion-col size="11">
+            {{product.title}}
+          </ion-col>
+          <ion-col size="1" (click)="wishlistModify(product.id,i)">
+            <ion-icon name="heart-outline" class="ion-font-lg" *ngIf="product.wishlist==''"></ion-icon>
+            <ion-icon name="heart" class="ion-font-lg" *ngIf="product.wishlist=='added'"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-card-header> -->
+      <ion-card-content class="productbox" (click)="productView(product.id);">
+        <ion-row>
+          <ion-col size="3">
+            <img [src]="product.image" class="productboximage">
+          </ion-col>
+          <ion-col size="9">
+            <ion-label text-wrap>{{product.title}}</ion-label>
+            <ion-label text-wrap>{{product.overview | shorttext:50 }}</ion-label>
+            <ion-label text-wrap translate>Price: {{currency}} {{product.price}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-row *ngIf="businessinfo.affiliate!='1'">
+        <ion-col size="5" class="ion-text-center padding_10px border-top border-right"
+          (click)="purchase(product,'addtoCart',i);" *ngIf="product.cart!='added'">
+          Add to Cart
+        </ion-col>
+        <ion-col size="5" class="ion-text-center padding_10px border-top border-right" *ngIf="product.cart=='added'">
+          Added to Cart
+        </ion-col>
+        <ion-col size="4" class="ion-text-center padding_10px border-top border-right"
+          (click)="purchase(product,'buynow');">
+          Buy Now
+        </ion-col>
+        <ion-col size="3" class="ion-text-center padding_10px border-top" (click)="wishlistModify(product.id,i)">
+          <ion-icon name="heart-outline" class="ion-font-lg" *ngIf="product.wishlist==''"
+            [ngStyle]="{'color': preferColorTheme}"></ion-icon>
+          <ion-icon name="heart" class="ion-font-lg" *ngIf="product.wishlist=='added'"
+            [ngStyle]="{'color': preferColorTheme}"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="businessinfo.affiliate=='1'">
+        <ion-col size="12" class="ion-text-center padding_10px border-top border-right"
+          (click)="productView(product.id);">
+          View Product
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="ion-text-center ion-padding" *ngIf="(category!=0 || category!='0') && productsType=='featured'" (click)="loadAllProducts();">
+      {{titleText}}
+    </ion-card>
+  </ion-col>
+</ion-row>

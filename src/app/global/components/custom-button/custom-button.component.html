@@ -1,0 +1,9 @@
+<ion-label class="ion-text-wrap ion-no-margin" *ngIf="multipleButtons">
+  <ion-button *ngFor="let item of multipleButtonData" size="small" fill="outline" class="ion-margin-end ion-margin-bottom mini-button" [ngClass]="item.showFlag? 'buttonSelected' : 'filterButton'" [shape]="buttonRound" (click)="isStatusChanged(item)">{{item.name}}</ion-button>
+</ion-label>
+
+<ion-label class="ion-text-wrap ion-no-margin" *ngIf="signleButton">
+  <ion-button [disabled]="isDisabled" [expand]="buttonExpand" [fill]="buttonFill" [ngStyle]="{'--background': preferColorTheme}"  [shape]="buttonRound" (click)="ButtonClicked($event)">
+      {{buttonLabel | translate}}
+  </ion-button>
+</ion-label>

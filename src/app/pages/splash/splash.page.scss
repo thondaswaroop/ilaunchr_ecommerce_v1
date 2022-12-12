@@ -1,0 +1,21 @@
+ion-content {
+    --padding-bottom: 0;
+    --padding-end: 0;
+    --padding-start: 0;
+    --padding-top: 0;
+    background: #fff;
+    --background: #fff;
+    --background-color: #fff;
+}
+
+.splash {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10%;
+    bottom: 0;
+    width: 100%;
+    height: 80vh;   
+}

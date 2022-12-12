@@ -1,0 +1,43 @@
+<app-header menuItem="parent" headerLabel="home" showCart="yes" [cartActionFun]="cartAction"></app-header>
+<ion-content [ngStyle]="{'--background': preferColorTheme}">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="banner_area" *ngIf="banners.length">
+          <ion-slides class="banner_slides slides" pager="true" *ngIf="banners && banners.length" autoplay="3000"
+            loop="true" speed="500">
+            <ion-slide *ngFor="let banner of banners" class="banner_slide"
+              [ngStyle]="{'background-image': 'url('+ banner.image +')', 'background-size': 'cover','background-position': 'bottom center'}">
+            </ion-slide>
+          </ion-slides>
+        </ion-card>
+        <ion-card class="banner_area" *ngIf="!banners.length">
+          <ion-slides pager="true" class="banner_slides slides">
+            <ion-slide class="banner_slide">
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </ion-slide>
+          </ion-slides>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-padding-xxs">
+        <ion-segment [scrollable]="true" [value]="currentCategory" (ionChange)="segmentChanged($event)">
+          <!-- <ion-segment-button [value]="0" (click)="loadProductsBasedOnCategory('0',$event,'')" class="ion-font-xs">
+            Featured
+          </ion-segment-button> -->
+          <ion-segment-button [value]="category.id" *ngFor="let category of categories;let i=index"  class="ion-font-xs"
+            (click)="loadProductsBasedOnCategory(category.id,$event,category.title)">
+            {{category.title}}
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <app-product [category]="currentCategory" (onCartUpdate)="onCartUpdate($event)" [categorytitle]="currentCategoryTitle" [cartActionFun]="cartAction" productsType="featured"></app-product>
+  </ion-grid>
+</ion-content>

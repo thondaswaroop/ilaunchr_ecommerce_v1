@@ -1,0 +1,95 @@
+<app-header menuItem="child" headerLabel="Checkout"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-padding" *ngIf="cartitems.length">
+      <ion-col size="12">
+        <ion-list lines="full">
+          <ion-item class="cart_item">
+            <ion-label>
+              Price
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.totalprice}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item" *ngIf="user.business_type=='0'">
+            <ion-label>
+              Delivery Charge
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.delivery}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item" *ngIf="cartData.service>0">
+            <ion-label>
+              Tax & Processing Fees
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.service}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item">
+            <ion-label>
+              Total Price
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.gtotal}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="ion-padding">
+      <ion-col size="12">
+        <ion-label position="floating" translate>First Name</ion-label>
+        <ion-input mode="md" type="text" placeholder="First Name" [(ngModel)]="user.firstname">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label position="floating" translate>Last Name</ion-label>
+        <ion-input mode="md" type="text" placeholder="Last Name" [(ngModel)]="user.lastname">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label position="floating" translate>Email Address</ion-label>
+        <ion-input mode="md" type="email" placeholder="Email Address" [(ngModel)]="user.email">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label position="floating" translate>Phone Number</ion-label>
+        <ion-input mode="md" type="number" placeholder="Phone Number" [(ngModel)]="user.phone">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12" *ngIf="user.business_type=='0'">
+        <ion-label position="floating" translate>Delivery Address</ion-label>
+        <ion-input mode="md" type="text" placeholder="Delivery Address"
+          [(ngModel)]="user.deliveryaddress">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12" *ngIf="user.business_type=='1'">
+        <ion-label position="floating" translate>Pickup Date</ion-label>
+        <ion-input mode="md" type="date" placeholder="Pickup Date"
+          [(ngModel)]="user.pickupdate">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12" *ngIf="user.business_type=='1'">
+        <ion-label position="floating" translate>Pickup Time</ion-label>
+        <ion-input mode="md" type="time" placeholder="Pickup Time"
+          [(ngModel)]="user.pickuptime">
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label position="floating" translate>Instructions / Comments</ion-label>
+        <ion-input mode="md" type="text" placeholder="Instructions / Comments"
+          [(ngModel)]="user.comments">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-custom-button class="ion-no-margin-horizontal" buttontype="FullButton" buttonExpand="full"
+    [buttonLabel]="'Confirm'|translate" (buttonClick)="proceedCheckout();"></app-custom-button>
+</ion-footer>

@@ -1,0 +1,58 @@
+<app-header menuItem="child" [headerLabel]="order.rnm"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card *ngFor="let product of order.products">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-label text-wrap translate>{{product.productname}}</ion-label>
+                  <ion-label text-wrap translate>Quanity: {{product.qty}}</ion-label>
+                  <ion-label text-wrap translate>Price: {{order.currency}} {{product.price}}</ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="12" *ngIf="order.id!=''">
+        <ion-list lines="full">
+          <ion-item class="cart_item">
+            <ion-label>
+              Final Price
+            </ion-label>
+            <ion-label slot="end">
+              {{order.currency}} {{order.price}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item">
+            <ion-label>
+              Current Status
+            </ion-label>
+            <ion-label slot="end">
+              {{order.status}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item" *ngIf="business_type=='1'">
+            <ion-label>
+              Pickup Date & Time
+            </ion-label>
+            <ion-label slot="end">
+              {{order.pickupdate}} {{order.pickuptime}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item">
+            <ion-label>
+              Comments<br/>
+              <small style="white-space: normal;">{{order.comments}}</small>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

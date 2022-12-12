@@ -1,0 +1,13 @@
+<!-- App Header Area Starts-->
+<app-header menuItem="child" [headerLabel]="contents.title"></app-header>
+<!-- App Header Area Ends-->
+<!-- App Content Area Starts-->
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col [innerHTML]="contents.content">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!-- App Content Area Ends-->

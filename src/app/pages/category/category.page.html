@@ -1,0 +1,12 @@
+<app-header menuItem="child" headerLabel="Categories"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let caetegory of categories" (click)="openCategory(caetegory.id,caetegory.title)">
+        <ion-card class="categorybox">
+          {{caetegory.title}}
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

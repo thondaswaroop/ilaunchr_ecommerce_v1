@@ -1,0 +1,20 @@
+ion-back-button {
+    display: block;
+}
+
+ion-label.cartcount {
+    text-align: right;
+    position: absolute;
+    margin-right: -28px;
+    background: var(--ion-color-primary);
+    padding: 5px;
+    border-radius: 50%;
+    color: #fff;
+    z-index: 9;
+}
+.toolbarbuttons{
+    width: 15%;
+}
+.full-width{
+    width: 100%;
+}

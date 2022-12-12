@@ -1,0 +1,41 @@
+<app-header menuItem="child" [headerLabel]="productdata.title"></app-header>
+<ion-content>
+  <ion-grid>
+    <div class="price_tag" [ngStyle]="{'background': preferColorTheme}">{{productdata.currency}} {{productdata.price}}</div>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides pager="true" autoplay="3000" loop="true" speed="500" class="slides">
+          <ion-slide *ngFor="let img of productdata.images;let i=index;"
+            [ngStyle]="{'background-image': 'url('+ img.image +')', 'background-size': 'cover','background-position': 'center'}">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="product_text" [ngStyle]="{'background': preferColorTheme}">
+        {{productdata.title}}
+      </ion-col>
+      <ion-col size="12" class="product_description">
+        <p class="ion-text-justify">{{productdata.overview}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer class="footer_background" [ngStyle]="{'background': preferColorTheme}">
+  <ion-row *ngIf="businessinfo.affiliate!='1'">
+    <!-- <ion-col size="2" class="ion-text-center card-border-right" (click)="socialShare(productdata.title,'AITVFC',productdata.images[0].image);">
+      <ion-icon name="share-social-outline" class="product_share_icon"></ion-icon>
+    </ion-col> -->
+    <ion-col size="6" class="ion-text-center card-border-right" (click)="purchase(productdata,'addtoCart');">
+      ADD TO CART
+    </ion-col>
+    <ion-col size="6" class="ion-text-center" (click)="purchase(productdata,'buynow');">
+      BUY NOW
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="businessinfo.affiliate=='1'">
+    <ion-col size="12" class="ion-text-center" (click)="redirectto(productdata.url);">
+      Click Here for Instant Access
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()" *ngIf="menuItem=='parent'">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+      <ion-back-button (click)="close()" *ngIf="menuItem=='child'">
+        <ion-icon name="close"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" *ngIf="showCart=='yes'" class="toolbarbuttons">
+      <ion-button (click)="openCart()" *ngIf="menuItem=='parent'" class="full-width">
+        <ion-icon name="basket-outline" class="ion-font-25"></ion-icon>
+        <ion-label class="cartcount"  [ngStyle]="{'background': preferColorTheme}">{{cartCount}}</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <ion-title translate>{{headerLabel}}</ion-title>
+  </ion-toolbar>
+</ion-header>

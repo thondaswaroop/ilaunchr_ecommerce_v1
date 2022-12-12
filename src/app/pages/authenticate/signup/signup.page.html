@@ -1,0 +1,54 @@
+<app-header menuItem="child" headerLabel="signup"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-margin-bottom">
+      <ion-col class="ion-text-center" size="12">
+        <h2 class="headerBolder" translate>SIGNUP</h2>
+      </ion-col>
+      <ion-col class="ion-text-center" size="12">
+        <ion-label class="headerMedium ion-12x sand-blue" translate>Please signup with all your information</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label position="floating" translate>Signup_Username</ion-label>
+          <ion-input mode="md" type="text" placeholder="{{Signup_Username | translate}}" [(ngModel)]="account.username">
+          </ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label position="floating" translate>Signup_Email</ion-label>
+          <ion-input mode="md" type="text" placeholder="{{Signup_Email | translate}}" [(ngModel)]="account.email">
+          </ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label position="floating" translate>Signup_Phone</ion-label>
+          <ion-input mode="md" type="number" placeholder="{{Signup_Phone | translate}}" [(ngModel)]="account.phone">
+          </ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label position="floating" translate>Signup_Password</ion-label>
+          <ion-input mode="md" type="password" placeholder="{{Signup_Password | translate}}"
+            [(ngModel)]="account.password"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label position="floating" translate>Signup_Confirm_Password</ion-label>
+          <ion-input mode="md" type="password" placeholder="{{Signup_Confirm_Password | translate}}"
+            [(ngModel)]="account.confirmpassword"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <app-custom-button class="ion-no-margin-horizontal" buttontype="FullButton" buttonExpand="full"
+            [buttonLabel]="'signup'|translate" (buttonClick)="doSignup();">
+          </app-custom-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top-2x">
+        <ion-col size="12" class="text-center" >
+          <ion-label translate (click)="pageRedirection('login')" style="text-decoration: underline;">HaveAccount</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>

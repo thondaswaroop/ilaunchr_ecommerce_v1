@@ -1,0 +1,95 @@
+<app-header menuItem="child" headerLabel="Cart"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card *ngFor="let cart of cartitems">
+          <!-- <ion-card-header class="ion-card-highlighter"></ion-card-header> -->
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-label text-wrap translate>{{cart.title}}</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="4">
+                        <app-custom-button class="ion-no-margin-horizontal circle" buttonFill="outline" buttonLabel="-"
+                          (buttonClick)="cartUpdate('negative',cart.id,cart.quantity);"></app-custom-button>
+                      </ion-col>
+                      <ion-col size="4" class="ion-padding ion-text-center">
+                        {{cart.quantity}}
+                      </ion-col>
+                      <ion-col size="4">
+                        <app-custom-button class="ion-no-margin-horizontal" buttonFill="outline" buttonLabel="+"
+                          (buttonClick)="cartUpdate('positive',cart.id,cart.quantity);"></app-custom-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+          <ion-row>
+            <ion-col size="6" class="ion-text-center padding_10px border-top border-right ion-font-sm">
+              Unit Price: {{cart.currency}} {{cart.price}} 
+            </ion-col>
+            <ion-col size="6" class="ion-text-center padding_10px border-top ion-font-sm">
+              Total Price: {{cart.currency}} {{cart.tprice}}
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col size="12" class="text-center" *ngIf="!cartitems.length">
+        <ion-label class="ion-padding-xxs margin_top_percentage_50">
+          No Cart Items Found
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding" *ngIf="cartitems.length">
+      <ion-col size="12">
+        <ion-list lines="full">
+          <ion-item class="cart_item">
+            <ion-label>
+              Price
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}}  {{cartData.totalprice}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item" *ngIf="cartData.service>0">
+            <ion-label>
+              Tax & Processing Fees
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.service}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item" *ngIf="businessType=='0'">
+            <ion-label>
+              Delivery Charge
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.delivery}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="cart_item">
+            <ion-label>
+              Total Price
+            </ion-label>
+            <ion-label slot="end">
+              {{cartData.currency}} {{cartData.gtotal}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer *ngIf="cartitems.length">
+  <app-custom-button class="ion-no-margin-horizontal" buttontype="FullButton" buttonExpand="full"
+    [buttonLabel]="'Proceed to Checkout'|translate" (buttonClick)="doCheckout();"></app-custom-button>
+</ion-footer>

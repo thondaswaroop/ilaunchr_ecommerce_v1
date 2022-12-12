@@ -1,0 +1,17 @@
+.circleborder {
+    padding: 7px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    text-align: center;
+    height: 35px;
+    width: 35px !important;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+ion-item.cart_item {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}

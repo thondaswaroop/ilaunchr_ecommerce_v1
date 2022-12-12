@@ -1,0 +1,39 @@
+ion-slides {
+    height: 300px;
+}
+
+ion-slide.swiper-slide.swiper-slide-active.active {
+    border-bottom: 1px solid #000;
+    border-width: unset;
+}
+
+ion-slide.swiper-slide.active {
+    border-bottom: 1px solid #000;
+    border-width: unset;
+}
+
+.product_text {
+    background: var(--ion-color-primary);
+    color: #fff;
+    padding: 10px;
+}
+
+.product_share_icon {
+    font-size: 20px;
+}
+
+.price_tag {
+    font-size: 20px;
+    border-radius: 50%;
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    float: right;
+    padding-top: 36px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    z-index: 9;
+    right: 10px;
+    color: #fff;
+}

@@ -1,0 +1,29 @@
+.banner_slides {
+    height: 155px !important;
+}
+
+.banner_slides.swiper-slide.swiper-slide-active.active {
+    border-bottom: 1px solid #000;
+    border-width: unset;
+}
+
+.banner_slides.swiper-slide.active {
+    border-bottom: 1px solid #000;
+    border-width: unset;
+}
+
+ion-footer {
+    background: transparent;
+}
+
+.scroll_area {
+    overflow: scroll;
+}
+
+ion-fab-button {
+    --background: #f00;
+}
+
+ion-slide {
+    text-align: left;
+}
