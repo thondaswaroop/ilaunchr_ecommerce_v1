@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/providers/api/api.service';
 import { LoaderService } from 'src/app/providers/loader.service';
 import { NavigationService } from 'src/app/providers/navigation.service';
+import { SocialsharingService } from 'src/app/providers/socialsharing.service';
 import { environment } from 'src/environments/environment';
-import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class MoreinfoPage implements OnInit {
   contents: any = [];
   version: string = '';
 
-  constructor(public api: ApiService, public load: LoaderService, public navigate: NavigationService, private socialSharing: SocialSharing) { }
+  constructor(public api: ApiService, public load: LoaderService, public navigate: NavigationService,public socialshare:SocialsharingService) { }
 
   ngOnInit() {
     this.load.loadStart();
@@ -37,6 +37,7 @@ export class MoreinfoPage implements OnInit {
   }
 
   shareApplication() {
+    this.socialshare.share(environment.appTitle,this.businessInfo.share_text,'',this.businessInfo.store_link);
     // this.socialSharing.canShareVia(environment.appTitle, this.businessInfo.share_text, environment.appTitle, '', this.businessInfo.store_link).then((resp) => {
     //   alert(JSON.stringify(resp));
     // }).catch((error) => {
@@ -44,12 +45,13 @@ export class MoreinfoPage implements OnInit {
     //   alert(JSON.stringify(error));
     // });
 
-    this.socialSharing.shareViaWhatsApp(this.businessInfo.share_text,'https://thumbs.dreamstime.com/b/new-normal-hand-drawn-lettering-logo-illustration-246631383.jpg',this.businessInfo.store_link).then((resp) => {
-      alert(JSON.stringify(resp));
-    }).catch((error) => {
-      alert('error');
-      alert(JSON.stringify(error));
-    });
+    // this.socialSharing.shareViaWhatsApp(this.businessInfo.share_text,'https://thumbs.dreamstime.com/b/new-normal-hand-drawn-lettering-logo-illustration-246631383.jpg',this.businessInfo.store_link).then((resp) => {
+    //   alert(JSON.stringify(resp));
+    // }).catch((error) => {
+    //   alert('error');
+    //   alert(JSON.stringify(error));
+    // });
+    
 
   }
 
